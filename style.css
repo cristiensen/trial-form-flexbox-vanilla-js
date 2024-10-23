@@ -1,0 +1,258 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/* Reset End */
+
+/* Variables */
+
+:root {
+    /* Colors */
+    --clr-primary: hsl(0, 100%, 74%);
+    --clr-secondary: hsl(154, 59%, 51%);
+    --clr-accent: hsl(248, 32%, 49%);
+    --clr-main-text: white;
+    --clr-accent-secondary: hsl(249, 10%, 26%);
+    --clr-input-border-color: hsl(0, 0%, 87%);
+    /* Font */
+    --font-size-main: 16px;
+    --font-size-label: 10px;
+    --font-primary: "Poppins";
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-main);
+    background-image: url("images/bg-intro-mobile.png");
+    background-color: var(--clr-primary);
+    color: var(--clr-main-text);
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-identity {
+    margin: 2.5rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#trial {
+    flex: 1;
+}
+
+h1 {
+    margin: 0 auto 0.75em auto;
+    width: 80%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+
+
+#trial-header {
+    background-color: var(--clr-accent);
+    border-radius: 10px;
+    box-shadow: 0 5px hsla(0, 0%, 0%, 0.2);
+    padding: 0.9em 3rem;
+    margin: 1rem 0;
+}
+
+#trial-form-container {
+    margin: 1.25rem 0;
+    padding: 1.5rem 0;
+    background-color: var(--clr-main-text);
+    border-radius: 10px;
+}
+
+#trial-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.input-field {
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+    padding: 1.25rem 1rem;
+    width: 100%;
+    height: 7vh;
+    border-radius: 5px;
+    border: none;
+    outline: 2px solid var(--clr-input-border-color);
+}
+
+.warning-icon {
+    position: absolute;
+    top: 25%;
+    right: 8%;
+    z-index: 10;
+}
+
+.input-empty-label {
+    align-self: flex-end;
+    color: var(--clr-primary);
+    margin: 0;
+    width: 100%;
+    text-align: right;
+    font-size: var(--font-size-label);
+    font-style: italic;
+}
+
+.input-field:focus {
+    outline: 1px solid black;
+    border: none;
+}
+
+.input-field::placeholder {
+    font-weight: 500;
+    color: var(--clr-accent-secondary);
+    opacity: 1;
+}
+
+.empty-input {
+    outline: 2px solid var(--clr-primary);
+}
+
+.empty-input::placeholder {
+    opacity: 0;
+}
+
+#submit-btn {
+    text-transform: uppercase;
+    font-size: 15px;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    width: 90%;
+    height: 8vh;
+    background-color: var(--clr-secondary);
+    color: var(--clr-main-text);
+    border: 2px solid hsla(0, 0%, 0%, 0.2);
+    border-radius: 5px;
+}
+
+#form-footer {
+    font-size: 10px;
+    text-align: center;
+    margin: 0.5rem auto;
+    width: 80%;
+    color: var(--clr-accent-secondary);
+}
+
+#form-footer p a {
+    color: var(--clr-primary);
+    text-decoration: none;
+}
+
+/* General Classes */
+
+.hidden {
+    display: none;
+}
+
+.fw-normal {
+    font-weight: 400;
+}
+
+.fw-medium {
+    font-weight: 500;
+}
+
+.fw-semi-bold {
+    font-weight: 600;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+@media only screen and (min-width: 760px) {
+
+    body {
+        background-image: url("images/bg-intro-desktop.png");
+    }
+
+    .container {
+        flex-direction: row;
+        align-items: center;
+        width: 80%;
+    }
+
+    #page-identity {
+        width: 50%;
+        margin: 0 3rem 0 0;
+    }
+
+    h1 {
+        margin: 0 auto 0.75em 0;
+        text-align: left;
+        font-size: 2rem;
+    }
+
+    #page-description {
+        text-align: left;
+    }
+}
